@@ -1,0 +1,32 @@
+<% url = spree.product_path(product, taxon_id: taxon.try(:id)) %>
+  <%= link_to url, itemprop: "url" do %>
+
+<li id="product_<%= product.id %>" class="mdc-list-item" tabindex="0" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
+  <% cache(taxon.present? ? [I18n.locale, current_currency, taxon, product] : cache_key_for_product(product)) do %>
+    <span class="mdc-list--avatar-list" aria-hidden="true"> 
+      <%= small_image(product, itemprop: "image") %>
+    </span>
+    <span class="mdc-list-item__text" style="min-width: 200px;">
+      <span class="mdc-list-item__primary-text products_title">
+         <%= content_tag(:span, truncate(product.name, length: 50), class: 'info', itemprop: "name", title: product.name) %>
+      </span>
+      <span class="mdc-list-item__secondary-text">
+         <%= content_tag(:span, truncate(product.sku, length: 50), class: 'info', itemprop: "sku", title: product.sku) %>
+      </span>
+    </span>
+    <span class="mdc-list-item__text" style="margin: 0px auto; min-width: 200px;">
+      <span class="mdc-list-item__primary-text">
+        <%= content_tag(:span, truncate(product.description, length: 50), class: 'info', itemprop: "description", title: product.description) %>
+      </span>
+    </span>
+    <span class="mdc-list-item__meta " aria-hidden="true">
+      <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+        <span class="price selling lead" itemprop="price" content="<%= (product.price_in(current_currency).amount.nil?)? 0 : product.price_in(current_currency).amount.to_d %>">
+          <%= display_price(product) %>
+        </span>
+      </span>
+    </span>
+    <% end %>
+</li>
+   <% end %>
+<hr class="mdc-list-divider">

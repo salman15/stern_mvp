@@ -1,0 +1,38 @@
+<% @body_id = 'home-page' %>
+<script>
+  var c = document.getElementById("contentContainer");
+  c.style.maxWidth  = "100%";
+  c.style.padding = "0";
+</script>
+<div style="
+    
+    width: 100%;
+    left: 0px;
+    padding: 0px;">
+    <header class="masthead" style="background-image: url(<%= asset_path('background5.jpg') %>)">
+      <div class="container">
+        <div class="intro-text">
+          <div class="intro-heading text-uppercase">Stern Telecom</div>
+          <hr class="divider">
+          <div class="intro-heading intro-heading-small text-uppercase">Your reliable supplier of electronic goods</div>
+          <a class="btn btn-primary  text-uppercase js-scroll-trigger" href="#services"><i class="fa fa-arrow-down"></i></a>
+        </div>
+      </div>
+    </header>
+    <section class="py-5 ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-12">
+              <img class="img-fluid d-block mx-auto" src="<%= asset_path('motorola.png') %>" alt="" style="max-width:150px;">
+          </div>
+          <div class="col-md-4 col-sm-12">
+              <img class="img-fluid d-block mx-auto" src="<%= asset_path('xiaomi.png') %>" alt="" style="max-width:150px;">
+          </div>
+          <div class="col-md-4 col-sm-12">
+              <img class="img-fluid d-block mx-auto" src="<%= asset_path('samsung.png') %>" alt="" style="max-width:150px;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+

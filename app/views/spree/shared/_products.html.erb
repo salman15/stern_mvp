@@ -1,0 +1,61 @@
+<% if spree_current_user %>
+
+
+
+
+<% content_for :head do %>
+  <% if products.respond_to?(:total_pages) %>
+    <%= rel_next_prev_link_tags products %>
+  <% end %>
+<% end %>
+
+<div data-hook="products_search_results_heading">
+  <% if products.empty? %>
+    <div data-hook="products_search_results_heading_no_results_found">
+      <%= Spree.t(:no_products_found) %>
+    </div>
+  <% elsif params.key?(:keywords) %>
+    <div data-hook="products_search_results_heading_results_found">
+      <h6 class="search-results-title"><%= Spree.t(:search_results, keywords: h(params[:keywords])) %></h6>
+    </div>
+  <% end %>
+</div>
+
+<% if products.any? %>
+  <div id="products" class="row" data-hook>
+    <ul class="mdc-list mdc-list--two-line">
+      <li id="product_title" class="mdc-list-item products-header" tabindex="0" data-hook="products_list_item" itemscope itemtype="https://schema.org/Product">
+          <span class="mdc-list-item__graphic material-icons" aria-hidden="true">
+           data_usage
+          </span>
+          <span class="mdc-list-item__text" style="min-width: 200px;">
+            <span class="mdc-list-item__primary-text products_title">
+               Product
+            </span>
+          </span>
+          <span class="mdc-list-item__text" style="margin: 0px auto; min-width: 200px;">
+            <span class="mdc-list-item__primary-text products_title">
+              product description
+            </span>
+          </span>
+          <span class="mdc-list-item__meta " aria-hidden="true">
+            <span itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <span class="price selling lead products_title" itemprop="price" content="">
+                price
+              </span>
+            </span>
+          </span>
+      </li>
+    <%= render partial: 'spree/products/product', collection: products, locals: { taxon: @taxon } %>
+    </ul>
+  </div>
+<% end %>
+
+<% if products.respond_to?(:total_pages) %>
+  <%= paginate products, theme: 'twitter-bootstrap-3' %>
+<% end %>
+
+<% else %>
+  <li id="link-to-login" class="nav-item"><%= link_to Spree.t(:login), spree.login_path, :class => 'nav-link text-white' %></li>
+<% end %>
+

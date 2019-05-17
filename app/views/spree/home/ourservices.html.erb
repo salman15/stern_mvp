@@ -1,0 +1,130 @@
+<% @body_id = 'about-page' %>
+
+<script>
+  var c = document.getElementById("contentContainer");
+  c.style.maxWidth  = "100%";
+  c.style.padding = "0";
+</script>
+    <!-- Services -->
+    <section class="py-6 ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="col-lg-12 text-center no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative floating-text">
+              <div class="col p-4 d-flex flex-column position-static">
+                <h2 class="section-heading text-uppercase">About</h2>
+                <h3 class="mb-1 text-muted">What defines us?</h3>
+                <p class="card-text mb-auto">
+                  Stern Telecom is one of the biggest international distributors of smartphones in The Netherlands. 
+                  With its head office in Amsterdam Stern Telecom has accomplished to establish a strong and trustworthy record the past decennia.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-12 floating-image">
+              <img class="img-fluid d-block mx-auto" src="<%= asset_path('bord.png') %>" alt="" style="max-width:150px;">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-light" id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">About</h2>
+            <h3 class="section-subheading text-muted">What defines us?</h3>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-mobile fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Trust</h4>
+            <p class="text-muted">Stern Telecom is one of the biggest international distributors of smartphones in The Netherlands. With its head office in Amsterdam Stern Telecom has accomplished to establish a strong and trustworthy record the past decennia.</p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">International</h4>
+            <p class="text-muted">With the aim on the international market Stern Telecom is able to provide every customer and partner around the world with the best products. Our suppliers and intermediaries work closely together to increase efficiency and offer reliable services.</p>
+          </div>
+          <div class="col-md-4">
+            <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+            </span>
+            <h4 class="service-heading">Our products</h4>
+            <p class="text-muted">Stern Telecom offers products ranging from low till high end and include brands such as: Samsung, Sony, Microsoft, Motorola, Apple and more. Is your company interested? Feel free to contact us for any of your questions or remarks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-uppercase">Our service</h2>
+            <h3 class="section-subheading text-muted">Sterntelecom could be your ideal partner!</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="timeline">
+              <li>
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="<%= asset_path('award.png') %>" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>Trustworthy record and over 10 years experience</h4>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="<%= asset_path('2.jpg') %>" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>We ship our product to all countries including yours</h4>
+                  </div>
+              </li>
+              <li>
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="<%= asset_path('vip.png') %>" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>We respect your needs and wishes</h4>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <img class="rounded-circle img-fluid" src="<%= asset_path('handshake.png') %>" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4>Because your company deserves a reliable partner</h4>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted">
+                <div class="timeline-image">
+                  <h4>Become
+                    <br>Our
+                    <br>Partner!</h4>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>

@@ -1,0 +1,50 @@
+.products-header{
+    background: grey;
+    margin-bottom: 30px;
+    color:white;
+}
+
+.products-header .price{
+    color:white;
+}
+
+.products-header .material-icons {
+    min-width: 100px;
+
+}
+
+.products_title{
+    font-size:1.5rem;
+}
+
+.top-navbar .navbar{
+    min-height: inherit;
+}
+
+.top-navbar .navbar a{
+   padding:5px 20px;
+   font-size:12px;
+}
+
+.dropdown .btn{
+    margin: 5px 0px;
+}
+
+.dropdown-menu{
+    text-align: center;
+}
+.dropdown-item a{
+    padding: 10px 30px;
+}
+
+.dropdown-item > a:hover{
+    background-color: black;
+}
+
+#spree-header .nav .dropdown a span{
+   color:black;
+}
+
+#spree-header {
+    margin-bottom: 0px;
+}

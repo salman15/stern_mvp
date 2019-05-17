@@ -1,0 +1,44 @@
+<nav class="col-md-12">
+  <div id="main-nav-bar" class="navbar">
+    <ul class="nav navbar-nav " data-hook>
+      <li id="home-link" data-hook><%= link_to Spree.t(:Home), spree.root_path %></li>
+      <% if spree_current_user %>
+        <li id="home-link" data-hook><%= link_to Spree.t(:products), spree.products_path %></li>
+      <% end %>
+      <li id="home-link" data-hook><a  href="/our-services">Our services</a></li>
+      <li id="home-link" data-hook><a href="/contact">Contact</a></li>
+      
+    </ul>
+    <ul class="nav navbar-nav navbar-right " data-hook>
+      <% if spree_current_user %>
+        <li id="search-bar" data-hook>
+          <%= render partial: 'spree/shared/search' %>
+        </li>
+        <li id="link-to-cart" data-hook>
+          <noscript>
+            <%= link_to_cart %>
+          </noscript>
+          &nbsp;
+        </li>
+        <script>Spree.fetch_cart()</script>
+        <li  data-hook>
+          <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           My account
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <span class="dropdown-item" id="home-link" data-hook><%= link_to Spree.t(:Orders), spree.account_path %></span>
+            <span class="dropdown-item" id="home-link" data-hook><%= link_to Spree.t(:Edit), spree.edit_account_path %></span>
+            <span class="dropdown-item" id="home-link" data-hook><%= link_to Spree.t(:Logout), spree.destroy_spree_user_session_path %></span>
+          </div>
+        </div>
+        </li>
+        
+      <% else %>
+        <li id="home-link" data-hook><%= link_to Spree.t(:Login), spree.login_path%></li>
+      <% end %>
+    </ul>
+      
+  </div>
+  
+</nav>
